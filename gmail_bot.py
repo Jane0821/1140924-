@@ -7,8 +7,7 @@ from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 
-# --- 1. 設定區 ---
-# 請將下方的網址換成你的 Discord Webhook URL
+
 DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1488569990901796996/HbGE9JQDh4lh-xmAS1PuVnWEGjG7WyiqPRVLrfeXPsktchfdZsaVIFwHCgTmNrsoDEQL"
 
 # 設定 Gmail 存取範圍 (唯讀模式)
@@ -78,7 +77,7 @@ def main():
             sender = next((h['value'] for h in headers if h['name'] == 'From'), "未知寄件者")
             snippet = msg['snippet']
 
-            # 🎯 關鍵字過濾清單 (可根據需求修改)
+            # 關鍵字過濾
             keywords = ['元智', 'yzu', '課程', '作業', '老師', '公告', '大學','截止']
             
             # 判斷是否符合關鍵字
